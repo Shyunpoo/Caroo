@@ -28,3 +28,15 @@ document.getElementById('sort').addEventListener('change', function() {
 function handleCredentialResponse(response) {
     console.log("ID: " + response.credential);
 }
+
+
+// Bouton comparer
+document.addEventListener('DOMContentLoaded', function () {
+    var compareButton = document.querySelector('.comparer');
+
+    if (compareButton) {
+        window.addEventListener('scroll', function () {
+            compareButton.style.top = (window.scrollY + window.innerHeight / 2) + 'px';
+        });
+    }
+});

@@ -50,51 +50,74 @@
     <!-- Formulaire de contact -->
     <div class="container">
         <h1>Contactez-nous</h1>
-        <div class="contact-info">
-            <p><strong>Nom de l'entreprise :</strong> Votre Entreprise</p>
-            <p><strong>Adresse :</strong> 123 Rue de l'Entreprise, Ville, Pays</p>
-            <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
-            <p><strong>Email :</strong> contact@votreentreprise.com</p>
+        <div class="row">
+            <!-- Section Informations de contact -->
+            <div class="column">
+                <h2>Informations de contact</h2>
+                <hr>
+                <div class="contact-info">
+                    <p><strong>Nom de l'entreprise :</strong> SnowStorm</p>
+                    <p><strong>Adresse :</strong> 50 Rue de Marseille, 69007 Lyon, France</p>
+                    <p><strong>Téléphone :</strong> +33 4 28 29 81 03</p>
+                    <p><strong>Email :</strong> contact@snowstorm.fr</p>
+                </div>
+            </div>
+
+            <!-- Section Formulaire de contact -->
+            <div class="column">
+                <h2>Formulaire de contact</h2>
+                <hr>
+                <form class="contact-form" action="mailto:votreadresseemail@example.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+
+            <!-- Section Google Maps -->
+            <div class="column">
+                <h2>Emplacement sur Google Maps</h2>
+                <hr>
+                <div class="map-container">
+                    <!-- Intégrer ici votre code Google Maps -->
+                </div>
+            </div>
         </div>
-        <form class="contact-form" action="mailto:votreadresseemail@example.com" method="post" enctype="text/plain">
-            <div class="form-group">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit">Envoyer</button>
-        </form>
     </div>
+
     
     <!-- Bas de page -->
     <footer>
         <div class="colonne">
-            <img src="../ASSETS/Logo.png" alt="Logo du site">
-            <img src="../ASSETS/Snowstorm.gg.png" alt="Nom du site">
+            <img src="ASSETS/Logo.png" alt="Logo du site">
+            <img src="ASSETS/Snowstorm.gg.png" alt="Nom du site">
         </div>
     
         <div class="colonne">
             <h4>Catégories</h4>
             <ul>
-                <li>Nouveautés</li>
-                <li>Meilleures ventes</li>
-                <li>Classiques</li>
-                <li>Préfaits</li>
-                <li>Personnaliser</li>
+                <li><a href="new_things.php">Nouveautés</a></li>
+                <li><a href="bestsellers.php">Meilleures ventes</a></li>
+                <li><a href="our_classics.php">Classiques</a></li>
+                <li><a href="premade_kits.php">Kits préfaits</a></li>
+                <li><a href="personalize.php">Personnaliser</a></li>
             </ul>
         </div>
     
         <div class="colonne">
             <h4>Informations</h4>
             <ul>
-                <li>Nous contacter</li>
+                <li><a href="contact.php">Nous contacter</a></li>
                 <li>Livraison</li>
                 <li>Mentions légales</li>
                 <li>Confidentialité</li>
@@ -114,12 +137,13 @@
         <div class="colonne">
             <h4>Nos réseaux</h4>
             <div class="reseaux-sociaux">
-                <img class="logo-reseau" src="../ASSETS/Youtube.png" alt="Logo YouTube">
-                <img class="logo-reseau" src="../ASSETS/X.png" alt="Logo Twitter">
-                <img class="logo-reseau" src="../ASSETS/Facebook.png" alt="Logo Facebook">
+                <img class="logo-reseau" src="ASSETS/Youtube.png" alt="Logo YouTube">
+                <img class="logo-reseau" src="ASSETS/X.png" alt="Logo Twitter">
+                <img class="logo-reseau" src="ASSETS/Facebook.png" alt="Logo Facebook">
             </div>
         </div>
     </footer>
+
 
     <script src="script.js"></script>
 </body>

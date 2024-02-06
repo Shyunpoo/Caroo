@@ -25,9 +25,9 @@ session_start();
                     </div>
                     <nav class="icon-nav">
                         <ul>
-                            <li><a href="#"><img src="ASSETS/Langues.png" alt="Changer de langue"></a></li>
-                            <li><a href="PAGES/connexion.php"><img src="ASSETS/Compte.png" alt="Mon compte"></a></li>
-                            <li><a href="PAGES/basket.php"><img src="ASSETS/Panier.png" alt="Mon panier"></a></li>
+                            <li><a href="#"><img src="ASSETS/Languages.png" alt="Changer de langue"></a></li>
+                            <li><a href="PAGES/connection.php"><img src="ASSETS/Account.png" alt="Mon compte"></a></li>
+                            <li><a href="PAGES/basket.php"><img src="ASSETS/Basket.png" alt="Mon panier"></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -52,22 +52,27 @@ session_start();
     </header>
 
     <!-- Page Accueil --> 
-    <div id="contenuAccueil" class="content-section">
-        <!-- Carousel d'images -->
-        <div class="carousel-container">
-            <div class="carousel-inner">
-                <div class="carousel-item"><img src="ASSETS/Keyboard11.webp" alt="Image 1"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard2.webp" alt="Image 2"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard3.webp" alt="Image 3"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard4.webp" alt="Image 4"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard5.webp" alt="Image 5"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard6.webp" alt="Image 6"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard7.webp" alt="Image 7"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard8.webp" alt="Image 8"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard9.webp" alt="Image 9"></div>
-                <div class="carousel-item"><img src="ASSETS/Keyboard10.webp" alt="Image 10"></div>
-            </div>
-        </div>
+    <?php 
+    $db = new PDO('mysql:host=mysql-chinchilla.alwaysdata.net;dbname=chinchilla_bdd;charset=utf8', '345543', 'chinchilla@8520');
+    
+    // Requête pour récupérer les 4 produits les plus vendus
+    $sql = "SELECT image FROM Produit ORDER BY nombre_ventes DESC LIMIT 4";
+    $resultat = $db->query($sql);
+
+    // Afficher le carrousel avec les produits récupérés
+    if ($resultat->rowCount() > 0) {
+        echo '<div class="carousel-container">
+                <div class="carousel-inner">';
+
+        while ($row = $resultat->fetch(PDO::FETCH_ASSOC)) {
+            echo '<div class="carousel-item"><img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Image"></div>';
+        }
+
+        echo '</div></div>';
+    } else {
+        echo "Aucun produit trouvé dans la base de données.";
+    }
+    ?>
 
         <hr class="ligne-separatrice">
 

@@ -92,11 +92,14 @@
         if ($result->rowCount() > 0) {
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo '<div class="product">';
-                echo '<input type="checkbox" name="compare[]" value="' . $row['ref_produit'] . '">'; // Case à cocher
+                echo '<div class="product-info">';
+                echo '<input type="checkbox" id="compare_' . $row['ref_produit'] . '" name="compare[]" value="' . $row['ref_produit'] . '">'; // Case à cocher
+                echo '<label class="compare-label" for="compare_' . $row['ref_produit'] . '">Comparer</label>';
                 echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="' . $row['nom_produit'] . '">';
                 echo '<p>' . $row['nom_produit'] . '</p>';
-                echo '<p>' . $row['prix'] . ' €</p>';
+                echo '<p class="price">' . $row['prix'] . ' €</p>';
                 echo '<a href="product_details.php?ref_produit=' . $row['ref_produit'] . '">Voir plus</a>';
+                echo '</div>';
                 echo '</div>';
             }
         } else {
@@ -104,7 +107,7 @@
         }
         ?>
     </div>
-    <button type="submit">Comparer</button>
+    <button class="comparer" type="submit">Comparer</button>
 </form>
 
 <script>
@@ -119,25 +122,25 @@
     <!-- Bas de page -->
     <footer>
         <div class="colonne">
-            <img src="../ASSETS/Logo.png" alt="Logo du site">
-            <img src="../ASSETS/Snowstorm.gg.png" alt="Nom du site">
+            <img src="ASSETS/Logo.png" alt="Logo du site">
+            <img src="ASSETS/Snowstorm.gg.png" alt="Nom du site">
         </div>
     
         <div class="colonne">
             <h4>Catégories</h4>
             <ul>
-                <li>Nouveautés</li>
-                <li>Meilleures ventes</li>
-                <li>Classiques</li>
-                <li>Préfaits</li>
-                <li>Personnaliser</li>
+                <li><a href="new_things.php">Nouveautés</a></li>
+                <li><a href="bestsellers.php">Meilleures ventes</a></li>
+                <li><a href="our_classics.php">Classiques</a></li>
+                <li><a href="premade_kits.php">Kits préfaits</a></li>
+                <li><a href="personalize.php">Personnaliser</a></li>
             </ul>
         </div>
     
         <div class="colonne">
             <h4>Informations</h4>
             <ul>
-                <li>Nous contacter</li>
+                <li><a href="contact.php">Nous contacter</a></li>
                 <li>Livraison</li>
                 <li>Mentions légales</li>
                 <li>Confidentialité</li>
@@ -157,9 +160,9 @@
         <div class="colonne">
             <h4>Nos réseaux</h4>
             <div class="reseaux-sociaux">
-                <img class="logo-reseau" src="../ASSETS/Youtube.png" alt="Logo YouTube">
-                <img class="logo-reseau" src="../ASSETS/X.png" alt="Logo Twitter">
-                <img class="logo-reseau" src="../ASSETS/Facebook.png" alt="Logo Facebook">
+                <img class="logo-reseau" src="ASSETS/Youtube.png" alt="Logo YouTube">
+                <img class="logo-reseau" src="ASSETS/X.png" alt="Logo Twitter">
+                <img class="logo-reseau" src="ASSETS/Facebook.png" alt="Logo Facebook">
             </div>
         </div>
     </footer>
