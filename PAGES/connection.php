@@ -26,9 +26,9 @@ session_start();
                     </div>
                     <nav class="icon-nav">
                         <ul>
-                            <li><a href="#"><img src="../ASSETS/Langues.png" alt="Changer de langue"></a></li>
-                            <li><a href="connexion.php"><img src="../ASSETS/Compte.png" alt="Mon compte"></a></li>
-                            <li><a href="basket.php"><img src="../ASSETS/Panier.png" alt="Mon panier"></a></li>
+                            <li><a href="#"><img src="../ASSETS/Languages.png" alt="Changer de langue"></a></li>
+                            <li><a href="connection.php"><img src="../ASSETS/Account.png" alt="Mon compte"></a></li>
+                            <li><a href="basket.php"><img src="../ASSETS/Basket.png" alt="Mon panier"></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -39,19 +39,6 @@ session_start();
                             <li><a href="product_list.php">Nos Produits</a></li>
                             <li><a href="personalize.php">Personaliser</a></li>
                             <li><a href="gallery.php">Galerie</a></li>
-                            <li><a href="SAV.php">Support/SAV</a></li>
-                            <li><a href="FAQ.php">FAQ</a></li>
-                            <li><a href="contact.php">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="bottom-section">
-                    <nav class="main-nav">
-                        <ul>
-                            <li><a href="../index.php">Accueil</a></li>
-                            <li><a href="produits.php">Nos Produits</a></li>
-                            <li><a href="personaliser.php">Personaliser</a></li>
-                            <li><a href="galerie.php">Galerie</a></li>
                             <li><a href="SAV.php">Support/SAV</a></li>
                             <li><a href="FAQ.php">FAQ</a></li>
                             <li><a href="contact.php">Contact</a></li>
@@ -111,8 +98,8 @@ session_start();
     <!-- Bas de page -->
     <footer>
         <div class="colonne">
-            <img src="ASSETS/Logo.png" alt="Logo du site">
-            <img src="ASSETS/Snowstorm.gg.png" alt="Nom du site">
+            <img src="../ASSETS/Logo.png" alt="Logo du site">
+            <img src="../ASSETS/Snowstorm.gg.png" alt="Nom du site">
         </div>
     
         <div class="colonne">
@@ -149,13 +136,12 @@ session_start();
         <div class="colonne">
             <h4>Nos réseaux</h4>
             <div class="reseaux-sociaux">
-                <img class="logo-reseau" src="ASSETS/Youtube.png" alt="Logo YouTube">
-                <img class="logo-reseau" src="ASSETS/X.png" alt="Logo Twitter">
-                <img class="logo-reseau" src="ASSETS/Facebook.png" alt="Logo Facebook">
+                <img class="logo-reseau" src="../ASSETS/Youtube.png" alt="Logo YouTube">
+                <img class="logo-reseau" src="../ASSETS/X.png" alt="Logo Twitter">
+                <img class="logo-reseau" src="../ASSETS/Facebook.png" alt="Logo Facebook">
             </div>
         </div>
     </footer>
-
 
     <script src="script.js"></script>
 </body>

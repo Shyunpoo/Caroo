@@ -102,109 +102,83 @@ header::after {
 }
 
 
-
-
-
-/* SAV */
+/* Styles pour le conteneur principal */
 .pagemain {
-    max-width: 600px;
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .separation {
-    height: 2px;
-    background-color: #ccc;
-    margin: 20px 0;
-  }
-  
-  .corps-formulaire {
-    display: flex;
-  }
-  
-  .gauche,
-  .droite {
-    flex: 1;
-  }
-  
-  .droite {
-    margin-left: 20px;
-  }
-  
-  .groupe {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  textarea {
-    height: 150px;
-  }
-  
-  button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  .fa-user,
-  .fa-envelope,
-  .fa-mobile,
-  .fa-earth-americas {
-    position: absolute;
-    top: 12px;
-    left: 10px;
-    color: #999;
-  }
-  
-  .fa-mobile {
-    top: 15px;
-  }
-  
-  .fa-earth-americas {
-    top: 14px;
-  }
-  
-  .pied-formulaire {
-    text-align: center;
-    margin-top: 20px;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+/* Styles pour le titre */
+.pagemain h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Styles pour la séparation */
+.separation {
+  height: 2px;
+  background-color: #ddd;
+  margin-bottom: 20px;
+}
+
+/* Styles pour les groupes de champs */
+.groupe {
+  margin-bottom: 20px;
+}
+
+/* Styles pour les libellés */
+.groupe label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Styles pour les champs de saisie */
+.groupe input[type="text"],
+.groupe input[type="email"],
+.groupe textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styles pour les icônes */
+.groupe i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+/* Styles pour le bouton */
+.pied-formulaire button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styles pour le bouton au survol */
+.pied-formulaire button[type="submit"]:hover {
+  background-color: #0056b3;
+}
 
 
 
 
   /* Footer */ 
-footer {
+  footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -241,6 +215,16 @@ footer ul {
 footer li {
     margin-bottom: 5px;
 }
+
+footer a {
+    text-decoration: none !important;
+    color: #fff;
+}
+
+footer a:hover {
+    color: #87D9FF;
+}
+
 
 footer img {
     max-width: 100%;

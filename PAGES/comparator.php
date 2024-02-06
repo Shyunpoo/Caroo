@@ -21,9 +21,9 @@
                     </div>
                     <nav class="icon-nav">
                         <ul>
-                            <li><a href="#"><img src="../ASSETS/Langues.png" alt="Changer de langue"></a></li>
-                            <li><a href="connexion.php"><img src="../ASSETS/Compte.png" alt="Mon compte"></a></li>
-                            <li><a href="basket.php"><img src="../ASSETS/Panier.png" alt="Mon panier"></a></li>
+                            <li><a href="#"><img src="../ASSETS/Languages.png" alt="Changer de langue"></a></li>
+                            <li><a href="connection.php"><img src="../ASSETS/Account.png" alt="Mon compte"></a></li>
+                            <li><a href="basket.php"><img src="../ASSETS/Basket.png" alt="Mon panier"></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -47,8 +47,8 @@
         </div>
     </header>
     <!-- Comparateur -->
-    <h1>Comparateur de produits</h1>
-    <div class="product-container">
+    <h1 class="comparison-title">Comparateur de produits</h1>
+    <div class="comparison-product-container">
         <?php
         // Connexion à la base de données
         $db = new PDO('mysql:host=mysql-chinchilla.alwaysdata.net;dbname=chinchilla_bdd;charset=utf8', '345543', 'chinchilla@8520');
@@ -64,17 +64,19 @@
 
             // Afficher les produits
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo '<div class="product">';
-                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="' . $row['nom_produit'] . '">';
-                echo '<h2>' . $row['nom_produit'] . '</h2>';
-                echo '<p>Description: ' . $row['description'] . '</p>';
-                echo '<p>Prix: ' . $row['prix'] . ' €</p>';
-                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['fiche_produit']) . '" alt="' . $row['nom_produit'] . '">';
+                echo '<div class="comparison-product">';
+                echo '<img class="comparison-product-image" src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="' . $row['nom_produit'] . '">';
+                echo '<h2 class="comparison-product-title">' . $row['nom_produit'] . '</h2>';
+                echo '<hr class="ligne-separatrice">';
+                echo '<p class="comparison-product-description">Description: ' . $row['description'] . '</p>';
+                echo '<p class="comparison-product-price">Prix: ' . $row['prix'] . ' €</p>';
+                echo '<hr class="ligne-separatrice">';
+                echo '<img class="comparison-product-specs" src="data:image/jpeg;base64,' . base64_encode($row['fiche_produit']) . '" alt="' . $row['nom_produit'] . '">';
                 // Ajouter d'autres détails du produit si nécessaire
                 echo '</div>';
             }
         } else {
-            echo "Veuillez sélectionner deux produits à comparer.";
+            echo '<p class="comparison-message">Veuillez sélectionner deux produits à comparer.</p>';
         }
         ?>
 
@@ -82,8 +84,8 @@
     <!-- Bas de page -->
     <footer>
         <div class="colonne">
-            <img src="ASSETS/Logo.png" alt="Logo du site">
-            <img src="ASSETS/Snowstorm.gg.png" alt="Nom du site">
+            <img src="../ASSETS/Logo.png" alt="Logo du site">
+            <img src="../ASSETS/Snowstorm.gg.png" alt="Nom du site">
         </div>
     
         <div class="colonne">
@@ -120,9 +122,9 @@
         <div class="colonne">
             <h4>Nos réseaux</h4>
             <div class="reseaux-sociaux">
-                <img class="logo-reseau" src="ASSETS/Youtube.png" alt="Logo YouTube">
-                <img class="logo-reseau" src="ASSETS/X.png" alt="Logo Twitter">
-                <img class="logo-reseau" src="ASSETS/Facebook.png" alt="Logo Facebook">
+                <img class="logo-reseau" src="../ASSETS/Youtube.png" alt="Logo YouTube">
+                <img class="logo-reseau" src="../ASSETS/X.png" alt="Logo Twitter">
+                <img class="logo-reseau" src="../ASSETS/Facebook.png" alt="Logo Facebook">
             </div>
         </div>
     </footer>

@@ -86,13 +86,13 @@ session_start();
             </div>
         
             <div class="carré-avec-bordure">
-                <h3><a href="PAGES/nouveautes.php">Nos Nouveautés</a></h3>
+                <h3><a href="PAGES/new_things.php">Nos Nouveautés</a></h3>
                 <img src="ASSETS/Keyboard10.webp" alt="Image 2" class="image">
                 <p class="texte">Référence modèle</p>
             </div>
         
             <div class="carré-avec-bordure">
-                <h3><a href="PAGES/new_things.php">Nos Classiques</a></h3>
+                <h3><a href="PAGES/our_classics.php">Nos Classiques</a></h3>
                 <img src="ASSETS/Keyboard3.webp" alt="Image 3" class="image">
                 <p class="texte">Référence modèle</p>
             </div>
@@ -102,19 +102,19 @@ session_start();
 
         <div class="ligne-carrés">
             <div class="carré-avec-bordure">
-                <h3><a href="PAGES/premade_kits">Nos Kits Préfaits</a></h3>
+                <h3><a href="PAGES/premade_kits.php">Nos Kits Préfaits</a></h3>
                 <img src="ASSETS/Keyboard15.webp" alt="Image 4" class="image">
                 <p class="texte">Référence modèle</p>
             </div>
         
             <div class="carré-avec-bordure">
-                <h3><a href="PAGES/premade_kits">Nos Kits Préfaits</a></h3>
+                <h3><a href="PAGES/premade_kits.php">Nos Kits Préfaits</a></h3>
                 <img src="ASSETS/Keyboard7.webp" alt="Image 5" class="image">
                 <p class="texte">Référence modèle</p>
             </div>
         
             <div class="carré-avec-bordure">
-                <h3><a href="PAGES/premade_kits">Nos Kits Préfaits</a></h3>
+                <h3><a href="PAGES/premade_kits.php">Nos Kits Préfaits</a></h3>
                 <img src="ASSETS/Keyboard11.webp" alt="Image 6" class="image">
                 <p class="texte">Référence modèle</p>
             </div>
@@ -166,8 +166,16 @@ session_start();
                 <img class="logo-reseau" src="ASSETS/X.png" alt="Logo Twitter">
                 <img class="logo-reseau" src="ASSETS/Facebook.png" alt="Logo Facebook">
             </div>
+            <div class="Newsletter">
+                <h4>Newsletter</h4>
+                <form id="newsletterForm" action="PAGES/subscribe.php" method="post">
+                    <input type="email" name="email" placeholder="Entrez votre adresse mail" required>
+                    <button type="submit" class="button-newsletter">S'abonner</button>
+                </form>
+            </div>
         </div>
     </footer>
+
 
     <script src="script.js"></script>
 </body>

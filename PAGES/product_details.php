@@ -39,9 +39,9 @@ if(isset($_GET['ref_produit'])) {
                     </div>
                     <nav class="icon-nav">
                         <ul>
-                            <li><a href="#"><img src="../ASSETS/Langues.png" alt="Changer de langue"></a></li>
-                            <li><a href="connexion.php"><img src="../ASSETS/Compte.png" alt="Mon compte"></a></li>
-                            <li><a href="basket.php"><img src="../ASSETS/Panier.png" alt="Mon panier"></a></li>
+                            <li><a href="#"><img src="../ASSETS/Languages.png" alt="Changer de langue"></a></li>
+                            <li><a href="connection.php"><img src="../ASSETS/Account.png" alt="Mon compte"></a></li>
+                            <li><a href="basket.php"><img src="../ASSETS/Basket.png" alt="Mon panier"></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -64,14 +64,16 @@ if(isset($_GET['ref_produit'])) {
             </div>
         </div>
     </header>
-    <h1>Détails du produit - <?php echo $product['nom_produit']; ?></h1>
+    <h1 class="texte">Détails du produit - <?php echo $product['nom_produit']; ?></h1>
     <div class="product-details">
         <img src="data:image/jpeg;base64,<?php echo base64_encode($product['image']); ?>" alt="<?php echo $product['nom_produit']; ?>">
-        <p>Description: <?php echo $product['description']; ?></p>
-        <p>Prix: <?php echo $product['prix']; ?> €</p>
-        <!-- Ajoutez d'autres détails du produit ici -->
-        <p>Fiche Technique : </p>
-        <img src="data:image/jpeg;base64,<?php echo base64_encode($product['fiche_produit']); ?>" alt="<?php echo $product['nom_produit']; ?>">
+        <h1 class="texte"><?php echo $product['nom_produit']; ?></h1>
+        <?php echo '<hr class="ligne-separatrice">'; ?>
+        <p>Description : <?php echo $product['description']; ?></p>
+        <p>Prix : <?php echo $product['prix']; ?> €</p>
+        <?php echo '<hr class="ligne-separatrice">'; ?>
+        <h1 class="texte">Fiche technique du produit - <?php echo $product['nom_produit']; ?></h1>
+        <img class="testt" src="data:image/jpeg;base64,<?php echo base64_encode($product['fiche_produit']); ?>" alt="<?php echo $product['nom_produit']; ?>">
     </div>
 
 <?php
@@ -85,8 +87,8 @@ if(isset($_GET['ref_produit'])) {
  <!-- Bas de page -->
  <footer>
         <div class="colonne">
-            <img src="ASSETS/Logo.png" alt="Logo du site">
-            <img src="ASSETS/Snowstorm.gg.png" alt="Nom du site">
+            <img src="../ASSETS/Logo.png" alt="Logo du site">
+            <img src="../ASSETS/Snowstorm.gg.png" alt="Nom du site">
         </div>
     
         <div class="colonne">
@@ -123,9 +125,9 @@ if(isset($_GET['ref_produit'])) {
         <div class="colonne">
             <h4>Nos réseaux</h4>
             <div class="reseaux-sociaux">
-                <img class="logo-reseau" src="ASSETS/Youtube.png" alt="Logo YouTube">
-                <img class="logo-reseau" src="ASSETS/X.png" alt="Logo Twitter">
-                <img class="logo-reseau" src="ASSETS/Facebook.png" alt="Logo Facebook">
+                <img class="logo-reseau" src="../ASSETS/Youtube.png" alt="Logo YouTube">
+                <img class="logo-reseau" src="../ASSETS/X.png" alt="Logo Twitter">
+                <img class="logo-reseau" src="../ASSETS/Facebook.png" alt="Logo Facebook">
             </div>
         </div>
     </footer>

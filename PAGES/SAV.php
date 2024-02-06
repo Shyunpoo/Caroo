@@ -6,6 +6,8 @@
     <meta name="description" content="Découvrez une gamme de claviers customisables pour exprimer votre style unique. Des claviers mécaniques de haute qualité, personnalisables avec une variété de switchs, designs et fonctionnalités. Transformez votre expérience de frappe avec nos claviers sur mesure.">
     <link rel="stylesheet" href="test.css">
     <link rel="icon" href="../ASSETS/Logo.png" type="image/png">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lcic2kpAAAAAL4Q7MKdc2AoxfvYhNDjbvZlkcWT"></script>
     <title>Snowstorm</title>
 </head>
 
@@ -21,9 +23,9 @@
                     </div>
                     <nav class="icon-nav">
                         <ul>
-                            <li><a href="#"><img src="../ASSETS/Langues.png" alt="Changer de langue"></a></li>
-                            <li><a href="connexion.php"><img src="../ASSETS/Compte.png" alt="Mon compte"></a></li>
-                            <li><a href="basket.php"><img src="../ASSETS/Panier.png" alt="Mon panier"></a></li>
+                            <li><a href="#"><img src="../ASSETS/Languages.png" alt="Changer de langue"></a></li>
+                            <li><a href="connection.php"><img src="../ASSETS/Account.png" alt="Mon compte"></a></li>
+                            <li><a href="basket.php"><img src="../ASSETS/Basket.png" alt="Mon panier"></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -86,12 +88,20 @@
   
         <div class="pied-formulaire" align="center">
           <button type="submit">Envoyer le message</button>
+          <div class="g-recaptcha" data-sitekey="6Lcic2kpAAAAAL4Q7MKdc2AoxfvYhNDjbvZlkcWT"></div>
         </div>
       </form>
       <script>
         emailjs.init("cVh0dNVTM-BBsLj6n");
 
     function sendEmail() {
+        var response = grecaptcha.getResponse();
+        if (response.length == 0) {
+            // Le CAPTCHA n'a pas été validé
+            alert("Veuillez valider le CAPTCHA.");
+            return;
+        }
+        // Le CAPTCHA a été validé, poursuivre avec l'envoi de l'e-mail
         const templateParams = {
             name: document.getElementById("name").value,
             email: document.getElementById("email").value,
@@ -106,18 +116,28 @@
                 alert("Le message a été envoyé avec succès !");
             }, (error) => {
                 console.error("Erreur lors de l'envoi de l'e-mail : ", error);
-                alert("Veuilliez réessayer");
+                alert("Veuillez réessayer");
             });
     }
+
       </script>
-    </div>
+    </div>  
+
+    <script>
+    function onClick(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(async () => {
+        const token = await grecaptcha.enterprise.execute('6Lcic2kpAAAAAL4Q7MKdc2AoxfvYhNDjbvZlkcWT', {action: 'LOGIN'});
+        });
+    }
+    </script>
 
     
     <!-- Bas de page -->
     <footer>
         <div class="colonne">
-            <img src="ASSETS/Logo.png" alt="Logo du site">
-            <img src="ASSETS/Snowstorm.gg.png" alt="Nom du site">
+            <img src="../ASSETS/Logo.png" alt="Logo du site">
+            <img src="../ASSETS/Snowstorm.gg.png" alt="Nom du site">
         </div>
     
         <div class="colonne">
@@ -154,9 +174,9 @@
         <div class="colonne">
             <h4>Nos réseaux</h4>
             <div class="reseaux-sociaux">
-                <img class="logo-reseau" src="ASSETS/Youtube.png" alt="Logo YouTube">
-                <img class="logo-reseau" src="ASSETS/X.png" alt="Logo Twitter">
-                <img class="logo-reseau" src="ASSETS/Facebook.png" alt="Logo Facebook">
+                <img class="logo-reseau" src="../ASSETS/Youtube.png" alt="Logo YouTube">
+                <img class="logo-reseau" src="../ASSETS/X.png" alt="Logo Twitter">
+                <img class="logo-reseau" src="../ASSETS/Facebook.png" alt="Logo Facebook">
             </div>
         </div>
     </footer>

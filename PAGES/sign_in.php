@@ -1,6 +1,6 @@
 <?php 
     session_start(); // Démarrage de la session
-    require_once 'bdd.php'; // On inclut la connexion à la base de données
+    require_once '../bdd.php'; // On inclut la connexion à la base de données
 
     if (!empty($_POST['email']) && !empty($_POST['password'])) // Si les champs email et password ne sont pas vides
     {
