@@ -26,7 +26,17 @@ session_start();
                     <nav class="icon-nav">
                         <ul>
                             <li><a href="#"><img src="ASSETS/Languages.png" alt="Changer de langue"></a></li>
-                            <li><a href="PAGES/connection.php"><img src="ASSETS/Account.png" alt="Mon compte"></a></li>
+                            <?php
+                                if (isset($_SESSION['user'])) {
+                                    // Utilisateur connecté, afficher le bouton et le menu déroulant
+                                    echo '<div>';
+                                    echo '<li><a href="PAGES/landing.php"><img src="ASSETS/settings.png" alt="Mon compte"></a></li>';
+                                } else {
+                                    // Utilisateur non connecté, afficher le bouton de connexion
+                                    echo '<li><a href="PAGES/connection.php"><img src="ASSETS/Account.png" alt="Mon compte"></a></li>';
+                                }
+                            ?>
+
                             <li><a href="PAGES/basket.php"><img src="ASSETS/Basket.png" alt="Mon panier"></a></li>
                         </ul>
                     </nav>

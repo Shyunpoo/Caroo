@@ -1,5 +1,5 @@
 <?php
-require_once "bdd.php";
+require_once "../bdd.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
     $surname = $_POST["surname"];
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
                 $stmt->execute();
 
                 echo "Inscription réussie. Vous pouvez maintenant vous connecter.";
-                header('Location: connexion.php');
+                header('Location: connection.php');
             }
 
         } catch(PDOException $e) {

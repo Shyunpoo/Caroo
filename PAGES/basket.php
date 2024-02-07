@@ -22,7 +22,16 @@
                     <nav class="icon-nav">
                         <ul>
                             <li><a href="#"><img src="../ASSETS/Languages.png" alt="Changer de langue"></a></li>
-                            <li><a href="connection.php"><img src="../ASSETS/Account.png" alt="Mon compte"></a></li>
+                            <?php
+                                if (isset($_SESSION['user'])) {
+                                    // Utilisateur connecté, afficher le bouton et le menu déroulant
+                                    echo '<div>';
+                                    echo '<li><a href="landing.php"><img src="../ASSETS/settings.png" alt="Mon compte"></a></li>';
+                                } else {
+                                    // Utilisateur non connecté, afficher le bouton de connexion
+                                    echo '<li><a href="connection.php"><img src="../ASSETS/Account.png" alt="Mon compte"></a></li>';
+                                }
+                            ?>
                             <li><a href="basket.php"><img src="../ASSETS/Basket.png" alt="Mon panier"></a></li>
                         </ul>
                     </nav>
@@ -92,6 +101,13 @@
                 <img class="logo-reseau" src="../ASSETS/Youtube.png" alt="Logo YouTube">
                 <img class="logo-reseau" src="../ASSETS/X.png" alt="Logo Twitter">
                 <img class="logo-reseau" src="../ASSETS/Facebook.png" alt="Logo Facebook">
+            </div>
+            <div class="Newsletter">
+                <h4>Newsletter</h4>
+                <form id="newsletterForm" action="subscribe.php" method="post">
+                    <input type="email" name="email" placeholder="Entrez votre adresse mail" required>
+                    <button type="submit" class="button-newsletter">S'abonner</button>
+                </form>
             </div>
         </div>
     </footer>

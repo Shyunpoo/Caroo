@@ -476,6 +476,14 @@ header::after {
     margin-bottom: 150px;
 }
 
+.btn {
+    background-color: #333 !important; 
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-style: none;
+}
+
 
 /* Page de connexion */
 .row {

@@ -6,10 +6,11 @@
     {
         $email = htmlspecialchars($_POST['email']); 
         $password = htmlspecialchars($_POST['password']);
+        
         $email = strtolower($email); 
         
         // On regarde si l'utilisateur est inscrit dans la table utilisateurs
-        $check = $bdd->prepare('SELECT email, password, nom, prenom, date_de_naissance FROM Utilisateur WHERE email = ?');
+        $check = $bdd->prepare('SELECT email, password, nom , prenom, is_admin FROM Utilisateur WHERE email = ?');
         $check->execute(array($email));
         $data = $check->fetch();
         $row = $check->rowCount();
@@ -24,48 +25,48 @@
                 if (password_verify($password, $data['password']))
                 {
                     // On vérifie si l'utilisateur est un administrateur
-                    if ($data['IsAdmin'] == 1)
+                    if ($data['is_admin'] == 1)
                     {
                         // Utilisateur administrateur, redirection
-                        $_SESSION['nom'] = $data['name'];
-                        $_SESSION['isAdmin'] = 1;
+                        $_SESSION['user'] = $data['nom'];
+                        $_SESSION['is_admin'] = 1;
                         header('Location: Dashboard/index.php');
                         die();
                     } 
                     else
                     {
                         // Utilisateur normal, redierection 
-                        $_SESSION['nom'] = $data['name'];
-                        $_SESSION['isAdmin'] = 0;
-                        header('Location: index.php');
+                        $_SESSION['user'] = $data['nom'];
+                        $_SESSION['is_admin'] = 0;
+                        header('Location: ../index.php');
                         die();
                     }
                 }
                 else
                 {
                     // Mot de passe incorrect
-                    header('Location: index.php?login_err=password');
+                    header('Location: ../index.php?login_err=password');
                     die();
                 }
             }
             else
             {
                 // Format d'email incorrect
-                header('Location: index.php?login_err=email');
+                header('Location: ../index.php?login_err=email');
                 die();
             }
         }
         else
         {
             // Utilisateur non trouvé dans la base de données
-            header('Location: index.php?login_err=already');
+            header('Location: ../index.php?login_err=already');
             die();
         }
     }
     else
     {
         // Formulaire envoyé sans aucune donnée
-        header('Location: index.php');
+        header('Location: ../index.php?login_err=empty');
         die();
     }
 ?>
